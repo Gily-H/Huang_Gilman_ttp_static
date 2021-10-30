@@ -1,0 +1,29 @@
+body {
+  background-color: blanchedalmond;
+  text-align: center;
+}
+
+h1 {
+  margin: 4rem 0 0 0;
+}
+
+#time {
+  color: red;
+}
+
+div.ball-image-container{
+  margin: 10rem 0 0 0;
+}
+
+img.ball-img {
+  width: 8%;
+  animation: rotate;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(-360deg); }
+  to{ transform: rotate(360deg); }
+}

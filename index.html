@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Hobby Page</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>My name is Gilman Huang and I am very much interested in film photography and volleyball! <span id="time"></span></h1>
+    <div class="ball-image-container">
+      <img class="ball-img" src="/images/ball.png" />
+    </div>
+    <script>
+      // when page finishes loading html elements, call function clockTime
+      document.addEventListener("DOMContentLoaded", clockTime);
+
+      function clockTime() {
+        // retrieve the span element with id "time"
+        let span = document.querySelector("#time");
+        let time = new Date();
+
+        // get the current time
+        let hours = time.getHours();
+        let mins = time.getMinutes();
+        let seconds = time.getSeconds();
+
+        // adjust time display
+        hours = hours >= 12 ? "0".concat(hours - 12) : hours;
+        mins = mins < 10 ? "0".concat(mins) : mins;
+        seconds = seconds < 10 ? "0".concat(seconds) : seconds;
+
+        // display the time in the span element with format hh:mm:ss
+        span.innerText = `The current time is: ${[hours, mins, seconds].join(":")}`;
+
+        // call function clockTime after 1 second
+        setTimeout(clockTime, 1000);
+      }
+    </script>
+  </body>
+</html>
